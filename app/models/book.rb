@@ -1,3 +1,3 @@
 class Book < ActiveRecord::Base
-  has_many :gathas
+  has_many :vaggas
 end

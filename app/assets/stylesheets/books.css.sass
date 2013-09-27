@@ -1,0 +1,14 @@
+@mixin columns($count)
+  column-count: $count
+  -moz-column-count: $count
+  -webkit-column-count: $count
+
+
+.vaggas
+  max-width: 500px
+@media all and (min-width: 280px)
+  .book > .vaggas
+    @include columns(2)
+@media all and (min-width: 400px)
+  .book > .vaggas
+    @include columns(3)
