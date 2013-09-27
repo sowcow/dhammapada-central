@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'thin'
+gem 'pry'
 
 
 # Use ActiveModel has_secure_password
