@@ -5,7 +5,7 @@ book = Book.create index: dhp[:index]
 dhp[:vaggas].each { |x|
   vagga = Vagga.create index: x[:index], book: book
 
-  vag[:gathas].each { |x|
+  x[:gathas].each { |x|
     Gatha.create index: x[:index], vagga: vagga
   }
 }
