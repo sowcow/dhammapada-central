@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-dhp = YAML.load 'db/seeds/toc.yml'
+dhp = YAML.load File.read 'db/seeds/toc.yml'
 
 book = Book.create index: dhp[:index]
 
