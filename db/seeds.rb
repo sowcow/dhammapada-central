@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+dhp = YAML.load 'db/seeds/toc.yml'
+
+book = Book.create index: dhp[:index]
+
+dhp[:vaggas].each { |x|
+  vagga = Vagga.create index: x[:index], book: book
+
+  vag[:gathas].each { |x|
+    Gatha.create index: x[:index], vagga: vagga
+  }
+}
