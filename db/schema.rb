@@ -11,23 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927082906) do
+ActiveRecord::Schema.define(version: 20130927105114) do
 
   create_table "books", force: true do |t|
-    t.string   "name"
+    t.string   "index"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "gathas", force: true do |t|
-    t.string   "name"
+    t.string   "index"
     t.integer  "vagga_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "vaggas", force: true do |t|
-    t.string   "name"
+    t.string   "index"
     t.integer  "book_id"
     t.datetime "created_at"
     t.datetime "updated_at"

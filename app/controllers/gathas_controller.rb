@@ -69,6 +69,6 @@ class GathasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gatha_params
-      params.require(:gatha).permit(:name, :vagga_id)
+      params.require(:gatha).permit(:index, :vagga_id)
     end
 end

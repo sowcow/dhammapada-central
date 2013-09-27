@@ -1,7 +1,7 @@
 class CreateGathas < ActiveRecord::Migration
   def change
     create_table :gathas do |t|
-      t.string :name
+      t.string :index
       t.integer :vagga_id
 
       t.timestamps

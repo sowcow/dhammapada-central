@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Index</th>
       <th>Book</th>
       <th></th>
       <th></th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @vaggas.each do |vagga| %>
       <tr>
-        <td><%= vagga.name %></td>
+        <td><%= vagga.index %></td>
         <td><%= vagga.book_id %></td>
         <td><%= link_to 'Show', vagga %></td>
         <td><%= link_to 'Edit', edit_vagga_path(vagga) %></td>

@@ -3,7 +3,7 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Index</th>
       <th>Vagga</th>
       <th></th>
       <th></th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @gathas.each do |gatha| %>
       <tr>
-        <td><%= gatha.name %></td>
+        <td><%= gatha.index %></td>
         <td><%= gatha.vagga_id %></td>
         <td><%= link_to 'Show', gatha %></td>
         <td><%= link_to 'Edit', edit_gatha_path(gatha) %></td>

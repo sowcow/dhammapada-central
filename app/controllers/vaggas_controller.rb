@@ -69,6 +69,6 @@ class VaggasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vagga_params
-      params.require(:vagga).permit(:name, :book_id)
+      params.require(:vagga).permit(:index, :book_id)
     end
 end

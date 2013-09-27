@@ -18,7 +18,7 @@ class VaggasControllerTest < ActionController::TestCase
 
   test "should create vagga" do
     assert_difference('Vagga.count') do
-      post :create, vagga: { book_id: @vagga.book_id, name: @vagga.name }
+      post :create, vagga: { book_id: @vagga.book_id, index: @vagga.index }
     end
 
     assert_redirected_to vagga_path(assigns(:vagga))
@@ -35,7 +35,7 @@ class VaggasControllerTest < ActionController::TestCase
   end
 
   test "should update vagga" do
-    patch :update, id: @vagga, vagga: { book_id: @vagga.book_id, name: @vagga.name }
+    patch :update, id: @vagga, vagga: { book_id: @vagga.book_id, index: @vagga.index }
     assert_redirected_to vagga_path(assigns(:vagga))
   end
 
