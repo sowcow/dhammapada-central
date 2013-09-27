@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vagga.name %>
+</p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @vagga.book_id %>
+</p>
+
+<%= link_to 'Edit', edit_vagga_path(@vagga) %> |
+<%= link_to 'Back', vaggas_path %>

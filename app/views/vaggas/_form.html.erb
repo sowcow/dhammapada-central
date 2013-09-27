@@ -1,0 +1,25 @@
+<%= form_for(@vagga) do |f| %>
+  <% if @vagga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vagga.errors.count, "error") %> prohibited this vagga from being saved:</h2>
+
+      <ul>
+      <% @vagga.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :book_id %><br>
+    <%= f.number_field :book_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

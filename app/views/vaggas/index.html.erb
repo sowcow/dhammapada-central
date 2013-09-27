@@ -1,0 +1,29 @@
+<h1>Listing vaggas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Book</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vaggas.each do |vagga| %>
+      <tr>
+        <td><%= vagga.name %></td>
+        <td><%= vagga.book_id %></td>
+        <td><%= link_to 'Show', vagga %></td>
+        <td><%= link_to 'Edit', edit_vagga_path(vagga) %></td>
+        <td><%= link_to 'Destroy', vagga, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vagga', new_vagga_path %>
