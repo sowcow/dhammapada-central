@@ -1,4 +1,6 @@
 Dhp::Application.routes.draw do
+  resources :gathas
+
   resources :vaggas
 
   resources :books

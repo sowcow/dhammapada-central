@@ -1,0 +1,29 @@
+<h1>Listing gathas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vagga</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gathas.each do |gatha| %>
+      <tr>
+        <td><%= gatha.name %></td>
+        <td><%= gatha.vagga_id %></td>
+        <td><%= link_to 'Show', gatha %></td>
+        <td><%= link_to 'Edit', edit_gatha_path(gatha) %></td>
+        <td><%= link_to 'Destroy', gatha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gatha', new_gatha_path %>
