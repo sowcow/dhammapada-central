@@ -3,5 +3,5 @@ class Vagga < ActiveRecord::Base
   has_many :gathas
 
   extend FriendlyId
-  friendly_id :index, use: [:finders]
+  friendly_id :index, use: :finders
 end
