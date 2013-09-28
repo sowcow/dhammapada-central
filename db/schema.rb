@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130927105114) do
+ActiveRecord::Schema.define(version: 20130928124722) do
 
   create_table "books", force: true do |t|
     t.string   "index"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20130927105114) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sources", force: true do |t|
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "translations", force: true do |t|
+    t.integer  "source_id"
+    t.integer  "translateable_id"
+    t.string   "translateable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "translations", ["translateable_id", "translateable_type"], name: "index_translations_on_translateable_id_and_translateable_type"
 
   create_table "vaggas", force: true do |t|
     t.string   "index"
