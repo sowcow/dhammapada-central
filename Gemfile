@@ -35,6 +35,7 @@ end
 gem 'thin'
 gem 'pry'
 gem 'slim-rails'
+gem 'friendly_id', github: 'norman/friendly_id'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

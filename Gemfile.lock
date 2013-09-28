@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 637ec7d62a56fc81dcc141ce2d1c287fa4b40055
+  specs:
+    friendly_id (5.0.0.rc2)
+      activerecord (~> 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,7 +46,7 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.3)
-    execjs (2.0.1)
+    execjs (2.0.2)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.1)
@@ -82,7 +89,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
-    sass (3.2.10)
+    sass (3.2.11)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -136,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
+  friendly_id!
   jbuilder (~> 1.2)
   jquery-rails
   pry
