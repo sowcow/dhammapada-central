@@ -24,7 +24,7 @@ dhp = YAML.load File.read 'db/seeds/dhp_original.yml'
 
 #attrs = dhp.reject { |k,v| %i[books tags].include? k }
 attrs = dhp.select { |k,v| %i[source].include? k }
-src = Translation::Source.where(attrs).first_or_create
+src = Source.where(attrs).first_or_create
 
 dhp[:books].each { |x|
   text, data = x.to_a.first # hash
