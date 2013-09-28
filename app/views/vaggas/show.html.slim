@@ -1,13 +1,17 @@
 p id='notice'
   = notice
 
-p
-  strong Index: 
-  = @vagga.index
+.vagga
+  h1 = @vagga.index
 
-p
-  strong Book: 
-  = @vagga.book_id
+  .gathas
+    - @vagga.gathas.each do |gatha|
+      p.gatha
+        .index = gatha.index
+        .translations
+          - gatha.translations.each do |translation|
+            p.translation
+              = translation.text
 
 /<%= link_to 'Edit', edit_vagga_path(@vagga) %> |
 /<%= link_to 'Back', vaggas_path %>
