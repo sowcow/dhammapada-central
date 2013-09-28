@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928124722) do
+ActiveRecord::Schema.define(version: 20130928125640) do
 
   create_table "books", force: true do |t|
     t.string   "index"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20130928124722) do
     t.string   "translateable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "text"
   end
 
   add_index "translations", ["translateable_id", "translateable_type"], name: "index_translations_on_translateable_id_and_translateable_type"

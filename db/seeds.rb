@@ -26,8 +26,9 @@ dhp = YAML.load File.read 'db/seeds/dhp_original.yml'
 attrs = dhp.select { |k,v| %i[source].include? k }
 src = Source.where(attrs).first_or_create
 
-dhp[:books].each { |x|
-  text, data = x.to_a.first # hash
+dhp[:books].each { |text, data|
+  #text, data = x.to_a.first # hash
+  #binding.pry
   index = data[:index]
   text = data[:text] if data[:text]
 
@@ -35,8 +36,8 @@ dhp[:books].each { |x|
   book.translations.where(source: src)
   .first_or_create text: text
 
-  data[:vaggas].each { |x|
-    index, data = x.to_a.first # hash
+  data[:vaggas].each { |text, data|
+    #index, data = x.to_a.first # hash
     index = data[:index]
     text = data[:text] if data[:text]
 
@@ -44,10 +45,10 @@ dhp[:books].each { |x|
     vagga.translations.where(source: src)
     .first_or_create text: text
 
-    data[:gathas].each { |x|
-      index, data = x.to_a.first # hash
-      index = data[:index]
-      text = data[:text] if data[:text]
+    data[:gathas].each { |index, data|
+      #index, data = x.to_a.first # hash
+      #index = data[:index]
+      text = data[:text] #if data[:text]
 
       gatha = Gatha.where(vagga: vagga, index: index).first
       gatha.translations.where(source: src)
