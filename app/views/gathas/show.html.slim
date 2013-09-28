@@ -1,0 +1,15 @@
+p id='notice'
+  = notice
+
+p
+  strong
+    Index: 
+  = @gatha.index
+
+p
+  strong
+    Vagga: 
+  = @gatha.vagga_id
+
+/<%= link_to 'Edit', edit_gatha_path(@gatha) %> |
+/<%= link_to 'Back', gathas_path %>

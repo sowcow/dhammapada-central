@@ -2,9 +2,10 @@ Dhp::Application.routes.draw do
 
   resources :gathas
 
-  resources :vaggas
 
-  resources :books
+  resources :books do
+    resources :vaggas
+  end
 
   root 'books#index'
 

@@ -1,0 +1,13 @@
+p id='notice'
+  = notice
+
+p
+  strong Index: 
+  = @vagga.index
+
+p
+  strong Book: 
+  = @vagga.book_id
+
+/<%= link_to 'Edit', edit_vagga_path(@vagga) %> |
+/<%= link_to 'Back', vaggas_path %>
