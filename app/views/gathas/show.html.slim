@@ -18,6 +18,9 @@ p id='notice'
         - @gatha.translations.each do |translation|
           p.translation
             = translation.text
+        .center
+          .shadow
+            img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'
 
 
 /*p
