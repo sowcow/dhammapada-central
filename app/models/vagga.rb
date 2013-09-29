@@ -5,4 +5,8 @@ class Vagga < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :index, use: :finders
+
+  def next
+    book.vaggas.where("id > ?", id).order("id ASC").first
+  end
 end

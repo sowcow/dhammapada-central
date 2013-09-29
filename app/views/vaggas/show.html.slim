@@ -27,5 +27,7 @@ p id='notice'
                 p.translation
                   = translation.text
 
-/<%= link_to 'Edit', edit_vagga_path(@vagga) %> |
-/<%= link_to 'Back', vaggas_path %>
+      h2 
+        - next_vagga = @vagga.next
+        - if next_vagga
+          = link_to next_vagga.index+' >', book_vagga_path(book,next_vagga)
