@@ -3,6 +3,9 @@
 # so it does not update attrs, just creates new entities
 # maybe there is some reason not to be destructive...
 
+
+# Dhp Structure:
+#
 dhp = YAML.load File.read 'db/seeds/toc.yml'
 
 book = Book.where(index: dhp[:index])
@@ -18,9 +21,11 @@ dhp[:vaggas].each { |x|
   }
 }
 
-# ***
 
-dhp = YAML.load File.read 'db/seeds/dhp_original.yml'
+# Dhp Contents:
+#
+def ensure_content file
+dhp = YAML.load File.read file
 
 #attrs = dhp.reject { |k,v| %i[books tags].include? k }
 attrs = dhp.select { |k,v| %i[source].include? k }
@@ -48,11 +53,20 @@ dhp[:books].each { |text, data|
     data[:gathas].each { |index, data|
       #index, data = x.to_a.first # hash
       #index = data[:index]
+      #binding.pry unless data_
       text = data[:text] #if data[:text]
 
+      if index == 0
+        puts 'ignoring'
+        next
+      end
       gatha = Gatha.where(vagga: vagga, index: index).first
       gatha.translations.where(source: src)
       .first_or_create text: text
     }
   }
 }
+end
+
+ensure_content 'db/seeds/dhp_original.yml'
+ensure_content 'db/seeds/en_dhp_achariya.yml'
