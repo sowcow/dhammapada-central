@@ -3,15 +3,30 @@
 p id='notice'
   = notice
 
-p
+.Gatha
+  .book
+    - book = @gatha.vagga.book
+    h1 = link_to book.index, book_path(book)
+
+    .vagga
+      - vagga = @gatha.vagga
+      h2 = link_to vagga.index, book_vagga_path(book,vagga)
+
+      .gatha
+        h3
+          a href = request.original_url = @gatha.index
+        - @gatha.translations.each do |translation|
+          p.translation
+            = translation.text
+
+
+/*p
   strong
     'Index: 
   = @gatha.index
-
-p
+/*p
   strong
     'Vagga: 
   = @gatha.vagga_id
-
 /<%= link_to 'Edit', edit_gatha_path(@gatha) %> |
 /<%= link_to 'Back', gathas_path %>
