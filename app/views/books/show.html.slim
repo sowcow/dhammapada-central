@@ -1,11 +1,12 @@
 p id='notice' = notice
 
-.book
-  h1 = @book.index
-  ul.vaggas
-    - @book.vaggas.each do |vagga|
-      li 
-        = link_to vagga.index, book_vagga_path(@book,vagga)
+.Book
+  .book
+    h1 = @book.index
+    ul.vaggas
+      - @book.vaggas.each do |vagga|
+        li 
+          = link_to vagga.index, book_vagga_path(@book,vagga)
 
 /nav
 /  = link_to 'Edit', edit_book_path(@book)

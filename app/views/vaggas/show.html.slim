@@ -1,17 +1,28 @@
 p id='notice'
   = notice
 
-.vagga
-  h1 = @vagga.index
+.Vagga
+  / to use @book = @vagga.book
+  / or
+  / to use vagga = @vagga?
 
-  .gathas
-    - @vagga.gathas.each do |gatha|
-      .gatha
-        .index = gatha.index
-        .translations
-          - gatha.translations.each do |translation|
-            p.translation
-              = translation.text
+  .book
+    - book = @vagga.book
+    h1 = link_to book.index, book_path(book)
+  
+    .vagga
+      h2 = @vagga.index
+    
+      .gathas
+        - @vagga.gathas.each do |gatha|
+          .gatha
+            .index
+              = link_to gatha.index, \
+              book_vagga_gatha_path(book,@vagga,gatha)
+            .translations
+              - gatha.translations.each do |translation|
+                p.translation
+                  = translation.text
 
 /<%= link_to 'Edit', edit_vagga_path(@vagga) %> |
 /<%= link_to 'Back', vaggas_path %>

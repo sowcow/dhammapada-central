@@ -1,14 +1,17 @@
-@mixin columns($count)
-  column-count: $count
-  -moz-column-count: $count
-  -webkit-column-count: $count
+@import 'mixins'
 
+.book
+  h1
+    text-align: center
 
-.vaggas
-  max-width: 500px
-@media all and (min-width: 280px)
-  .book > .vaggas
-    @include columns(2)
-@media all and (min-width: 400px)
-  .book > .vaggas
-    @include columns(3)
+/* upcased scope means book view page
+.Book
+  .vaggas
+    max-width: 450px
+    margin: auto
+  @media all and (min-width: 280px)
+    .vaggas
+      @include columns(2)
+  @media all and (min-width: 400px)
+    .vaggas
+      @include columns(3)

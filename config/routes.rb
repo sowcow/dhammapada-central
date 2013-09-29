@@ -1,13 +1,16 @@
 Dhp::Application.routes.draw do
 
-  resources :gathas
 
 
   resources :books do
-    resources :vaggas
+    resources :vaggas do
+      resources :gathas
+    end
   end
 
-  root 'books#index'
+  root to: redirect('/books/Dhammapada')
+  #root 'books#show', id: 1
+  #root 'books#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
