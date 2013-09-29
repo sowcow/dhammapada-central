@@ -16,7 +16,7 @@ dhp[:vaggas].each { |x|
                .first_or_create
 
   x[:gathas].each { |x|
-    Gatha.where(index: x[:index], vagga: vagga)
+    Gatha.where(index: x[:index].to_s, vagga: vagga)
          .first_or_create
   }
 }
@@ -60,7 +60,7 @@ dhp[:books].each { |text, data|
         puts 'ignoring'
         next
       end
-      gatha = Gatha.where(vagga: vagga, index: index).first
+      gatha = Gatha.where(vagga: vagga, index: index.to_s).first
       gatha.translations.where(source: src)
       .first_or_create text: text
     }
