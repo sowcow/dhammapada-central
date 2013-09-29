@@ -28,7 +28,7 @@ def ensure_content file
 dhp = YAML.load File.read file
 
 #attrs = dhp.reject { |k,v| %i[books tags].include? k }
-attrs = dhp.select { |k,v| %i[source].include? k }
+attrs = dhp.select { |k,v| %i[source lang].include? k }
 src = Source.where(attrs).first_or_create
 
 dhp[:books].each { |text, data|
