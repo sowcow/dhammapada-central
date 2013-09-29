@@ -14,11 +14,13 @@ p id='notice'
 
       .gatha
         h3
+          - prev = @gatha.prev
+          - next_ = @gatha.next
           .prev
-            == link_to '←', book_vagga_gatha_path(book,vagga,@gatha.prev)
+            == link_to '←', book_vagga_gatha_path(book,prev.vagga,prev)
           a href = request.original_url = @gatha.index
           .next
-            == link_to '→', book_vagga_gatha_path(book,vagga,@gatha.next)
+            == link_to '→', book_vagga_gatha_path(book,next_.vagga,next_)
 
 
         - @gatha.translations.each do |translation|
