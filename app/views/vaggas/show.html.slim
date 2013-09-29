@@ -19,7 +19,7 @@ p id='notice'
       .gathas
         - @vagga.gathas.each do |gatha|
           .gatha
-            .index
+            h3.index
               = link_to gatha.index, \
               book_vagga_gatha_path(book,@vagga,gatha)
             .translations
