@@ -1,3 +1,5 @@
+$nav-padding: 1em
+
 .gatha
   .translation
     white-space: pre-line
@@ -6,6 +8,22 @@
 .Gatha .vagga
   h2, h3
     text-align: center
+
+  h3 > a
+    padding-right: $nav-padding
+    padding-left: $nav-padding
+
+  .prev
+    /* yes, I need to to use a.prev instead
+    display: inline
+    a
+      padding-right: $nav-padding
+      padding-left: $nav-padding
+  .next
+    display: inline
+    a
+      padding-right: $nav-padding
+      padding-left: $nav-padding
 
   .gatha
     .center
