@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130928125640) do
+ActiveRecord::Schema.define(version: 20130929070016) do
 
   create_table "books", force: true do |t|
     t.string   "index"
@@ -19,12 +19,16 @@ ActiveRecord::Schema.define(version: 20130928125640) do
     t.datetime "updated_at"
   end
 
+  add_index "books", ["index"], name: "index_books_on_index"
+
   create_table "gathas", force: true do |t|
     t.string   "index"
     t.integer  "vagga_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "gathas", ["index"], name: "index_gathas_on_index"
 
   create_table "sources", force: true do |t|
     t.string   "source"
@@ -49,5 +53,7 @@ ActiveRecord::Schema.define(version: 20130928125640) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "vaggas", ["index"], name: "index_vaggas_on_index"
 
 end
