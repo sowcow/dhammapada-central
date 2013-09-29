@@ -1,8 +1,11 @@
+- content_for(:title) { @book.index }
+
 p id='notice' = notice
 
 .Book
   .book
-    h1 = @book.index
+    h1
+      a href = request.original_url = @book.index
     ul.vaggas
       - @book.vaggas.each do |vagga|
         li 

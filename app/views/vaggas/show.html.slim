@@ -1,3 +1,5 @@
+- content_for(:title) { @vagga.index }
+
 p id='notice'
   = notice
 
@@ -11,7 +13,8 @@ p id='notice'
     h1 = link_to book.index, book_path(book)
   
     .vagga
-      h2 = @vagga.index
+      h2 
+        a href = request.original_url = @vagga.index
     
       .gathas
         - @vagga.gathas.each do |gatha|
