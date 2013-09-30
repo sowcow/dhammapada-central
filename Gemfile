@@ -38,6 +38,8 @@ gem 'pry'
 gem 'slim-rails'
 gem 'friendly_id', github: 'norman/friendly_id'
 
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
