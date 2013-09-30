@@ -9,11 +9,11 @@ class Gatha < ActiveRecord::Base
   def prev
     that = index.to_i - 1
     that = MAX if that < MIN
-    vagga.book.gathas.where(index: that).first
+    vagga.book.gathas.where(index: that.to_s).first
   end
   def next
     that = index.to_i + 1
     that = MIN if that > MAX
-    vagga.book.gathas.where(index: that).first
+    vagga.book.gathas.where(index: that.to_s).first
   end
 end
