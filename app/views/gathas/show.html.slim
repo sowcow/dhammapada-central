@@ -25,7 +25,10 @@ p id='notice'
 
         - @gatha.translations.each do |translation|
           p.translation
-            = translation.text
+            span.text
+              = translation.text
+            .button
+              == "&#10004;"
         .center
           .shadow
             img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'

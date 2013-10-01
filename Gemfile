@@ -40,6 +40,9 @@ gem 'friendly_id', github: 'norman/friendly_id'
 
 gem 'rails_12factor', group: :production
 
+gem 'jquery-turbolinks'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
