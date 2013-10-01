@@ -1,3 +1,4 @@
+info: 'todo: myapp? dhp is consistant with app name'
 development:
   adapter: postgresql
   encoding: unicode
