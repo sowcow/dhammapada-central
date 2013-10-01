@@ -2,6 +2,10 @@ Dhp::Application.routes.draw do
 
 
 
+  resources :languages
+
+  resources :phrases
+
   resources :books do
     resources :vaggas do
       resources :gathas
