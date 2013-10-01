@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  one_id: 1
+  two_id: 1
+
+two:
+  one_id: 1
+  two_id: 1

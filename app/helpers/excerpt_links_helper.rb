@@ -1,0 +1,2 @@
+module ExcerptLinksHelper
+end

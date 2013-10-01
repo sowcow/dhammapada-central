@@ -1,6 +1,7 @@
 class Gatha < ActiveRecord::Base
   belongs_to :vagga
   has_many :translations, as: :translateable
+  delegate :book, to: :vagga
 
   # hardcode is not always a problem...
   MIN = 1

@@ -1,6 +1,7 @@
 Dhp::Application.routes.draw do
 
-
+  post 'excerpt_links/create'
+  post 'excerpt_links/destroy'
 
   resources :languages
 
