@@ -53,6 +53,22 @@ submit = (action, method, values) ->
 
 $ ->
 
+  highlightText = ->
+    # dirty step...
+    if window.location.search
+      from = param 'start'
+      to = param 'end'
+      node = $(".translation[x-id=#{ param('id') }] .text")
+      inner = node.html()
+      highlighted = inner.substring from, to
+      console.log('wtf!') unless highlighted is param('text')
+      span = "<span class=hili>#{highlighted}</span>"
+      updated = inner.substring(0,from) + span + \
+                inner.substring(to,inner.length)
+      node.html updated
+
+    
+
   $('.button').click ->
     text_node = window.getSelection().anchorNode
     node = text_node.parentNode
@@ -113,6 +129,7 @@ $ ->
     else
       hideButton()
  
+  highlightText()
   hideButton()
   $('html').click react
   $('html').mouseup react
