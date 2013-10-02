@@ -24,7 +24,7 @@ p id='notice'
 
 
         - @gatha.translations.each do |translation|
-          p.translation x-id=translation.id
+          p.translation x-id = translation.id
             span.text
               = translation.text
         .button
@@ -32,6 +32,10 @@ p id='notice'
         .center
           .shadow
             img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'
+
+        hr
+          img src = '/img/underconstruction.gif' style='margin: auto; display: block'
+
 
 
 /*p
