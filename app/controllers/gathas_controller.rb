@@ -10,6 +10,9 @@ class GathasController < ApplicationController
   # GET /gathas/1
   # GET /gathas/1.json
   def show
+    @excerpts = @gatha.translations.flat_map { |t|
+      t.excerpts
+    }
   end
 
   # GET /gathas/new

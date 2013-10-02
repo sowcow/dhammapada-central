@@ -33,7 +33,16 @@ p id='notice'
           .shadow
             img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'
 
-        hr
+        - if @excerpts.any?
+          hr
+            ul.heh
+              - @excerpts.to_a.each do |x|
+                li
+                  .text = x.text + ' -- ' + x.linked.map(&:text).join(', ')
+                  .also
+                    - gathas = x.phrase.where_used
+                    - links = gathas.map { |gatha| link_to gatha.index, book_vagga_gatha_path(gatha.book, gatha.vagga, gatha) }
+                    == links.join ' '
           img src = '/img/wip.gif' style='margin: auto; display: block'
 
 
