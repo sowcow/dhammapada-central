@@ -37,11 +37,17 @@ gem 'thin'
 gem 'pry'
 gem 'slim-rails'
 gem 'friendly_id', github: 'norman/friendly_id'
+gem 'color-generator'
 
 gem 'rails_12factor', group: :production
 
 gem 'jquery-turbolinks'
 
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

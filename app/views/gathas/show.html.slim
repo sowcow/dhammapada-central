@@ -13,6 +13,8 @@ p id='notice'
       h2 = link_to vagga.index, book_vagga_path(book,vagga)
 
       .gatha
+        .button == "&#10004;"
+
         h3
           - prev = @gatha.prev
           - next_ = @gatha.next
@@ -27,12 +29,16 @@ p id='notice'
           p.translation x-id = translation.id
             span.text
               = translation.text
-        .button
-          == "&#10004;"
         .center
           .shadow
             img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'
 
+        - @gatha.translations.each do |translation|
+          - next if translation.excerpts.none?
+          p.translation
+            span.text
+              == colored_text translation
+          
         - if @excerpts.any?
           hr
             ul.heh
