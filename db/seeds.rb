@@ -71,3 +71,4 @@ end
 ensure_content 'db/seeds/dhp_original.yml'
 ensure_content 'db/seeds/ru_dhp_toporov.yml'
 ensure_content 'db/seeds/en_dhp_achariya.yml'
+ensure_content 'db/seeds/ru_dhp_paribok.yml'
