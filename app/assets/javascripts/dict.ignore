@@ -1,4 +1,12 @@
 
+
+
+#
+# don't forget:
+# - gzipped js trigrams generated in ruby
+#
+
+
 ###
 # to dry-out of file(s):
 isTranslation = (node) ->
