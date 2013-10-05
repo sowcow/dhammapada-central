@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  translateable_id: 
+  translateable_type: Translateable
+
+two:
+  translateable_id: 
+  translateable_type: Translateable

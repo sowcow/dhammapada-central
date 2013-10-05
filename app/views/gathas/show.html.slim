@@ -52,9 +52,10 @@ p id='notice'
             ul.heh
               - @excerpts.to_a.each do |x|
                 li
-                  .text = x.text + ' -- ' + x.linkzed.map(&:text).join(', ')
+                  .text = x.text + ' -- ' + x.linked.map(&:text).join(', ')
                   .also
-                    - gathas = x.phrase.where_used
+                    'also used: 
+                    - gathas = x.phrase.where_used.reject { |x| x == @gatha }
                     - links = gathas.map { |gatha| link_to gatha.index, book_vagga_gatha_path(gatha.book, gatha.vagga, gatha) }
                     == links.join ' '
           img src = '/img/wip.gif' style='margin: auto; display: block'

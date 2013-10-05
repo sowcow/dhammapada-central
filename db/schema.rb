@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131001153738) do
+ActiveRecord::Schema.define(version: 20131005035822) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20131001153738) do
     t.integer  "to"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "meaning_id"
   end
 
   create_table "gathas", force: true do |t|
@@ -55,6 +56,15 @@ ActiveRecord::Schema.define(version: 20131001153738) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "meanings", force: true do |t|
+    t.integer  "translateable_id"
+    t.string   "translateable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "meanings", ["translateable_id", "translateable_type"], name: "index_meanings_on_translateable_id_and_translateable_type", using: :btree
 
   create_table "phrases", force: true do |t|
     t.string   "text"

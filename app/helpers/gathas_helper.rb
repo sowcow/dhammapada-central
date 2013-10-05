@@ -105,7 +105,7 @@ module GathasHelper
       x.excerpts.map { |x|
         #next unless x.excerpt_links.any? #1/3
         # to use other links someday...
-        link = x.linkz.first.id #excerpt_links.first.id
+        link = x.meaning #x.linkz.first.id #excerpt_links.first.id
         known_links << link
         [link, x.from...x.to]
       }#.compact #2/3
