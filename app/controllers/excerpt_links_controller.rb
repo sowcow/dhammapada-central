@@ -13,19 +13,17 @@ class ExcerptLinksController < ApplicationController
 
     case
     when e1.meaning && e2.meaning
-      throw 'conflict of colors?'
-    when e1.meaning || e2.meaning
-      m = e1.meaning if e1.meaning
-      m = e2.meaning if e2.meaning
-      e1.meaning = m
-      e2.meaning = m
+      flash[:notice] = 'Can\' deal with conflicting colors!'
     else
-      m = Meaning.create translateable: t1.translateable
+      m = e1.meaning || e2.meaning ||
+          Meaning.create(translateable: t1.translateable)
       e1.meaning = m
       e2.meaning = m
       e1.save
       e2.save
     end
+
+
     #e1.linked << e2
     # .save?
 
