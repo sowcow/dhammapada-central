@@ -23,11 +23,6 @@ class ExcerptLinksController < ApplicationController
       e2.save
     end
 
-
-    #e1.linked << e2
-    # .save?
-
-    #location = :back
     x = t1.translateable
     location = book_vagga_gatha_path(x.book, x.vagga, x)
 
