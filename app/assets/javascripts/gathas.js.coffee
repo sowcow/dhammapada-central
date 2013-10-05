@@ -122,6 +122,7 @@ $ ->
 
   react = ->
     node = window.getSelection().anchorNode
+    return unless node
     node = node.parentNode
     text = window.getSelection().getRangeAt(0).toString()
     if node and text and isTranslation node
