@@ -1,0 +1,52 @@
+
+###
+# to dry-out of file(s):
+isTranslation = (node) ->
+  node = $ node
+  node.hasClass('text') and node.parent().hasClass('translation')
+
+selectedText = ->
+  window.getSelection().getRangeAt(0).toString()
+
+isTranslationSelected = ->
+  node = window.getSelection().anchorNode
+  node = node.parentNode
+  node and selectedText() and isTranslation node
+#/dry
+
+
+prepareIndex = ->  
+  keys = []
+  for k, v of pi2en_dict
+    keys.push k
+  TrigramIndex keys
+
+findTranslations = (word, index, count = 5) ->
+  result = index.find(word)
+
+translation = (word) ->
+  pi2en_dict[word]
+
+viewTranslationFor = (text, index) ->
+  console.log 123
+  $('.dict').html findTranslations(text, index)
+
+
+
+$ ->
+  indexName = 'pali-en-trigram-index-1'
+  stored = false
+  if stored #= localStorage.getItem indexName
+    index = JSON.parse(stored)
+  else
+    index = prepareIndex()
+    localStorage.setItem indexName, JSON.stringify(index)
+
+  console.log index
+
+  react = ->
+    if isTranslationSelected()
+      viewTranslationFor selectedText(), index
+
+  $('html').on 'mouseup', react
+###  
