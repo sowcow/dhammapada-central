@@ -1,6 +1,15 @@
 # Place all the behaviors and hooks related to the matching controller here.
 
 
+$ ->
+  $('.play-button a').on 'click', ->
+    audio = this.firstChild
+    if audio.paused
+      audio.play()
+    else
+      audio.pause()
+
+
 # todo: to try to get rid of js...
 
 # copy/paste

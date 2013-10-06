@@ -26,12 +26,28 @@ p id='notice'
 
 
         - @gatha.translations.each do |translation|
-          p.translation x-id = translation.id
-            span.text
-              = translation.text
+          p
+            .translation x-id=translation.id
+              /span
+              .text
+                = translation.text
+                - # dirty
+                - if translation.translateable.translations.first == translation
+                  .play-button
+                    a
+                      audio controls=false preload='none' src="/audio/gathas/#{@gatha.index}.ogg" type='audio/ogg'
+                      img src='/img/ui/play.png'
         .center
           .shadow
             img.illustration src = '/img/dhammapada/gatha_#{@gatha.index}.jpg'
+        /a onclick="this.firstChild.play()" href='#listen'
+        /div style='text-align: center'
+          a onclick="this.firstChild.play()" style='cursor: pointer'
+            audio controls=false preload='none' src="/audio/gathas/#{@gatha.index}.ogg" type='audio/ogg'
+            img src='/img/ui/play.png'
+        /div onclick="this.firstChild.play()" style='cursor: pointer;text-align: center'
+          audio controls=false preload='none' src="/audio/gathas/#{@gatha.index}.ogg" type='audio/ogg'
+          img src='/img/ui/play.png'
 
         - tr = @gatha.translations.select { |x| x.excerpts.any? }
         - texts = tr.map &:text
