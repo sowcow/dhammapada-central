@@ -25,6 +25,8 @@ $nav-padding: 1em
     display: block
     padding: 0
   .translation
+    $play-button-size: 25px
+    
     white-space: pre-line
     text-align: center
     .text
@@ -32,12 +34,23 @@ $nav-padding: 1em
       position: relative
       max-width: 450px
       .play-button
+        audio
+          display: none
         position: absolute
         cursor: pointer
         left: -30px
         top: 5px
+        width:  $play-button-size
+        height: $play-button-size
         img
-          width: 25px
+          width:  $play-button-size
+          height: $play-button-size
+        &:hover
+          background: lightgray
+        /*a
+          &:hover
+            background: none
+
 
 .Gatha .vagga
 

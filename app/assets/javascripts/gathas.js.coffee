@@ -2,7 +2,8 @@
 
 
 $ ->
-  $('.play-button a').on 'click', ->
+  #$('.play-button a').on 'click', ->
+  $('.play-button').on 'click', ->
     audio = this.firstChild
     if audio.paused
       audio.play()
