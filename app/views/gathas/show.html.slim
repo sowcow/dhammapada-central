@@ -66,8 +66,19 @@ p id='notice'
         /      == colored_text translation
         .dict
 
+        hr
+          - @gatha.articles.each do |article|
+            h4 = article.title
+            - md = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+            == md.render article.text
+            /markdown:
+            /  #{ article.text }
+
+
+
+
         - if @excerpts.any?
-          hr
+          div
             ul.heh
               - @excerpts.to_a.each do |x|
                 li

@@ -104,6 +104,7 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     ref (1.0.5)
     sass (3.2.11)
     sass-rails (4.0.0)
@@ -169,6 +170,7 @@ DEPENDENCIES
   pry
   rails (= 4.0.0)
   rails_12factor
+  redcarpet
   sass-rails (~> 4.0.0)
   sdoc
   slim-rails

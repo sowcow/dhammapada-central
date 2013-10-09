@@ -3,6 +3,8 @@ class Gatha < ActiveRecord::Base
   has_many :translations, as: :translateable
   delegate :book, to: :vagga
 
+  has_many :articles, as: :translateable
+
   # hardcode is not always a problem...
   MIN = 1
   MAX = 423

@@ -72,3 +72,22 @@ ensure_content 'db/seeds/dhp_original.yml'
 ensure_content 'db/seeds/ru_dhp_toporov.yml'
 ensure_content 'db/seeds/en_dhp_achariya.yml'
 ensure_content 'db/seeds/ru_dhp_paribok.yml'
+
+
+def dhp_comments_and_grammar
+  grammar = YAML.load File.read 'db/seeds/dhp/grammar.yml'
+  Book.find_by(index: 'Dhammapada').gathas.each { |gatha|
+    text = grammar[gatha.index.to_i]
+    gatha.articles.where(title: 'Grammar')
+         .first_or_create text: text
+  }
+
+  data = YAML.load File.read'db/seeds/dhp/comments.yml'
+  Book.find_by(index: 'Dhammapada').gathas.each { |gatha|
+    text = data[gatha.index.to_i]
+    gatha.articles.where(title: 'Commentary')
+         .first_or_create text: text
+  }
+end
+
+dhp_comments_and_grammar

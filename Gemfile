@@ -38,6 +38,7 @@ gem 'pry'
 gem 'slim-rails'
 gem 'friendly_id', github: 'norman/friendly_id'
 gem 'color-generator'
+gem 'redcarpet'
 
 gem 'rails_12factor', group: :production
 
