@@ -40,6 +40,8 @@ gem 'friendly_id', github: 'norman/friendly_id'
 gem 'color-generator'
 gem 'redcarpet'
 
+gem 'activeadmin', github: 'gregbell/active_admin'
+
 gem 'rails_12factor', group: :production
 
 gem 'jquery-turbolinks'

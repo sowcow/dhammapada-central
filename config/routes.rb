@@ -1,5 +1,7 @@
 Dhp::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   post 'excerpt_links/create'
   post 'excerpt_links/destroy'
 

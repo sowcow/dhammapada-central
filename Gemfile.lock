@@ -1,8 +1,26 @@
 GIT
-  remote: git://github.com/norman/friendly_id.git
-  revision: 637ec7d62a56fc81dcc141ce2d1c287fa4b40055
+  remote: git://github.com/gregbell/active_admin.git
+  revision: 9f6b03030667801adc58af4aba9ae56160c3b0b2
   specs:
-    friendly_id (5.0.0.rc2)
+    activeadmin (0.6.1)
+      arbre (~> 1.0)
+      bourbon
+      coffee-rails
+      devise (~> 3.0)
+      formtastic (~> 2.3.0.rc2)
+      inherited_resources (~> 1.3)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (~> 0.13)
+      rails (>= 3.2, < 4.1)
+      ransack (~> 1.0)
+      sass-rails
+
+GIT
+  remote: git://github.com/norman/friendly_id.git
+  revision: 495b5cd0b395a2eabb8b00bd244e589d99de105a
+  specs:
+    friendly_id (5.0.0.rc3)
       activerecord (~> 4.0.0)
 
 GEM
@@ -32,15 +50,21 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    arbre (1.0.1)
+      activesupport (>= 3.0.0)
     arel (4.0.0)
     atomic (1.1.14)
+    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     builder (3.1.4)
-    coderay (1.0.9)
+    coderay (1.1.0)
     coffee-rails (4.0.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -51,12 +75,26 @@ GEM
     color-generator (0.0.4)
     daemons (1.1.9)
     debug_inspector (0.0.2)
+    devise (3.1.1)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
+      warden (~> 1.2.3)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    formtastic (2.3.0.rc2)
+      actionpack (>= 3.0)
+    has_scope (0.6.0.rc)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.6.5)
-    jbuilder (1.5.1)
+    inherited_resources (1.4.1)
+      has_scope (~> 0.6.0.rc)
+      responders (~> 1.0.0.rc)
+    jbuilder (1.5.2)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     jquery-rails (3.0.4)
@@ -65,7 +103,12 @@ GEM
     jquery-turbolinks (2.0.1)
       railties (>= 3.1.0)
       turbolinks
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     json (1.8.0)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
@@ -73,13 +116,17 @@ GEM
     method_source (0.8.2)
     mime-types (1.25)
     minitest (4.7.5)
-    multi_json (1.8.0)
+    multi_json (1.8.1)
+    orm_adapter (0.4.0)
     pg (0.17.0)
+    polyamorous (0.6.4)
+      activerecord (>= 3.0)
     polyglot (0.3.3)
-    pry (0.9.12.2)
-      coderay (~> 1.0.5)
-      method_source (~> 0.8)
-      slop (~> 3.4)
+    pry (0.9.6)
+      coderay (>= 0.9.8)
+      method_source (>= 0.6.5)
+      ruby_parser (>= 2.0.5)
+      slop (~> 2.1.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -95,18 +142,26 @@ GEM
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.1)
-    rails_stdout_logging (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.0.0)
       actionpack (= 4.0.0)
       activesupport (= 4.0.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.0)
+    ransack (1.0.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      polyamorous (~> 0.6.0)
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (3.0.0)
     ref (1.0.5)
-    sass (3.2.11)
+    responders (1.0.0)
+      railties (>= 3.2, < 5)
+    ruby_parser (3.2.2)
+      sexp_processor (~> 4.1)
+    sass (3.2.12)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
@@ -114,15 +169,16 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
+    sexp_processor (4.3.0)
     slim (2.0.1)
       temple (~> 0.6.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (2.0.1)
+    slim-rails (2.0.3)
       actionpack (>= 3.0, < 4.1)
       activesupport (>= 3.0, < 4.1)
       railties (>= 3.0, < 4.1)
       slim (~> 2.0)
-    slop (3.4.6)
+    slop (2.1.0)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -132,14 +188,14 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    temple (0.6.6)
+    temple (0.6.7)
     therubyracer (0.12.0)
       libv8 (~> 3.16.14.0)
       ref
-    thin (1.5.1)
+    thin (1.6.0)
       daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.5.0)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -149,15 +205,18 @@ GEM
       polyglot (>= 0.3.1)
     turbolinks (1.3.0)
       coffee-rails
-    tzinfo (0.3.37)
+    tzinfo (0.3.38)
     uglifier (2.2.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin!
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)

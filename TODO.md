@@ -5,11 +5,13 @@
 
 * oggs -> Carrierwave on translateable? + db:seed
 
+* activeadmin-like search!
+
 
 # fixmes
 
 * fix missing: 20.ogg
-* completly lost?: 400+.oggs
+* completly lost?: 400+.oggs or search web.archive.org for wavs?
 * en,ru-Toporov compound gathas
 * footnotes?
 * partials
